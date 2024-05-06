@@ -99,7 +99,7 @@ body > main > section > div.barra-lateral > nav > button:nth-child(1) > i{
     display: flex;
     align-items: center;
     background-color: #ffffff;
-    border-radius: 20px;
+    border-radius: 50px;
     overflow: hidden;
     position: relative;
     padding-top: 30px;
@@ -152,7 +152,12 @@ a {
     color: black;
     padding: 5px;
 }
-
+div ul li{
+    list-style-type: none;
+}
+.signo::before{
+    content: ">";
+}
 .contacto, .desarrollo {
     font-family: "Roboto Condensed", sans-serif;
     list-style-type: none;
