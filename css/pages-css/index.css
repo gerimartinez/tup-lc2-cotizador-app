@@ -5,4 +5,147 @@
     padding: 0;
 }
 
+.contenido-principal {
+    border: 1px solid green;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 15px;
+}
 
+.contenedor-migas {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.contenedor-migas a {
+    text-decoration: none;
+}
+
+.title-pizarra {
+    font-family: Roboto, sans-serif;
+    text-align: center;
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.contenedor {
+    max-width: 450px; /* Define el ancho máximo del contenedor */
+
+   
+}
+.filtro {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;  
+    align-items: center; 
+}
+.filtro label {
+    font-family: Roboto, sans-serif;
+    margin-right: 10px;
+    
+}
+.filtro select {
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+.filtro button {
+    border: none;
+    background-color: #e0e0e0;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+body > main > section > div.contenido-principal > div.contenedor > div.filtro > button > i{
+    color: green;
+    font-size: 20px;
+}
+p {
+    margin-top: 10px;
+}
+
+.p-datos {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-family: Roboto, sans-serif;
+    margin-bottom: 20px;
+}
+.grilla {
+    display: flex;
+    gap: 20px; 
+    flex-wrap: wrap;
+    background-color: #f0f0f0;
+    border: 1px solid #b2b2b2;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.cotizacion {
+    flex-basis: 30%;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 500px;
+    border: 1px solid #b2b2b2;
+    background-color: #ffffff;
+}
+.contenedor-precio {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-end; 
+}
+.cont-title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-family: Roboto, sans-serif;
+}
+.cont-precio {
+    display: flex;
+    justify-content: end;
+    font-family: Roboto, sans-serif;
+}
+.cotizacion p {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+}
+
+.cont-title p {
+    margin-right: 5px;
+    text-transform: uppercase;
+    color: #626161;
+    font-weight: 500;
+}
+.cont-precio p {
+    margin-right: 5px;
+    text-transform: uppercase;
+    color: black;
+    font-weight: 600;
+    padding-top: 5px;
+}
+.contenedor-boton {
+    display: flex;
+}
+.contenedor-boton button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.fa-solid {
+    font-size: 25px;
+}
+
+.texto-final {
+    display: flex;
+    font-family: Roboto, sans-serif;
+    align-items: center;
+}
