@@ -73,7 +73,8 @@ p {
     justify-content: end;
     align-items: center;
     font-family: Roboto, sans-serif;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    margin-right: 70px;
 }
 .grilla {
     display: flex;
@@ -148,4 +149,21 @@ p {
     display: flex;
     font-family: Roboto, sans-serif;
     align-items: center;
+}
+
+.texto{
+    padding-left: 10px;
+}
+
+.datos-obtenidos{
+    margin-left: 180px;
+    margin-top: 40px;
+    padding: 10px;
+    background-color: #e5e7eb;
+}
+
+.datos-link{
+    background-color: #5e37ca;
+    text-decoration: none;
+    color: white;
 }
