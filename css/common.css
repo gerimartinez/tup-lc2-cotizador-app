@@ -179,3 +179,8 @@ div ul li{
     grid-column-start: 2;
     grid-column-end: 4;
 }
+
+.desarrollado-por{
+    padding-top: 50px;
+    padding-left: 150px;
+}
