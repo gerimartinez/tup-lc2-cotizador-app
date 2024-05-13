@@ -54,7 +54,7 @@ section {
     gap: 20px;
 }
 .barra-lateral{
-    background-color: rgb(166, 238, 170);
+    background-color: #0b3f125a;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -65,7 +65,7 @@ nav {
     gap: 10px;
 }
 body > main > section > div.barra-lateral > nav > button:nth-child(1) > i{
-    color: yellow;
+    color: rgba(255, 255, 0, 0.522);
 }
 .boton-inicio{
     border-radius: 20px; 
@@ -138,7 +138,7 @@ body > main > section > div.barra-lateral > nav > button:nth-child(1) > i{
 footer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    background-color:  rgb(240,240,240);
+    background-color:  #68826b5a;;
 }
 footer p {
     font-weight: 900;
