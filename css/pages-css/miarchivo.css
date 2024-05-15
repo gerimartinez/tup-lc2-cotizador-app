@@ -3,17 +3,45 @@
     padding: 0;
 }
 
-table {
+.contenedor-migas {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 98%;
+}
+
+.tabla {
     border-collapse: collapse;
-    width: 100%;
+    width: 98%;
 }
 
 th, td {
-    text-align: left;
+    text-align: center;
     padding: 8px;
-    border: 1px solid #ddd;
 }
 
-th {
-    background-color: #f2f2f2;
+.titulo-mi-archivo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.celda-cotizaciones{
+    background-color: #dae2f3;
+}
+
+.celda-fecha{
+    color: #4672c4;
+    background-color: #ededed;
+}
+
+#impresora{
+    color: #4672c4;
+    font-size: xx-large;
+}
+
+#borrar{
+    color: #c55a11;
+    font-size: x-large;
 }
