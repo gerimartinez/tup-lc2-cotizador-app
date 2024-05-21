@@ -3,6 +3,13 @@
     padding: 0;
 }
 
+.contenido-principal{
+    border: 1px solid green;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 15px;
+}
+
 .contenedor-migas {
     display: flex;
     justify-content: end;
@@ -10,13 +17,24 @@
     width: 98%;
 }
 
+.contenedor-tabla{
+    overflow: scroll;
+    scrollbar-width: none;
+    height: 525px;
+    border-radius: 30px;
+    border: 1px solid lightgrey;
+}
+
 .tabla {
     border-collapse: collapse;
-    width: 98%;
+    width: 100%;
+}
+
+td{
+    border-left: 1px solid lightgrey;
 }
 
 th, td {
-    text-align: center;
     padding: 8px;
 }
 
@@ -29,11 +47,18 @@ th, td {
 
 .celda-cotizaciones{
     background-color: #dae2f3;
+    position: sticky;
+    top: 0;
+    bottom: 0;
 }
 
 .celda-fecha{
     color: #4672c4;
     background-color: #ededed;
+}
+
+.celda-contenido{
+    text-align: center;
 }
 
 #impresora{
