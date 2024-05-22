@@ -1,9 +1,6 @@
-body {
-    font-family: Arial, sans-serif;
+*{
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
-    font-weight: 550;
 }
 
 .contenedor-migas {
@@ -11,28 +8,6 @@ body {
     justify-content: end;
     align-items: center;
     width: 98%;
-}
-
-.contenido-principal{
-    height: 40em;
-    background-color: white;
-}
-
-a {
-    color: #4672C4;
-}
-
-.migas-de-pan p{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 5em;
-    text-decoration: solid;
-    font-size: 1.1em;
-}
-
-.migas-de-pan a{
-    color: black;
 }
 
 .contenedor-formulario {
@@ -44,20 +19,20 @@ a {
     border-radius: 15px;
 }
 
-h2 {
+.titulo {
     display: flex;
     width: 100%;
     justify-content: center;
-    padding-top: 1em;
+    padding-top: 16px;
 }
 
 .formulario-informacion {
     display: flex;
-    padding-top: 2em;
-    padding-left: 1em;
+    padding-top: 32px;
+    padding-left: 16px;
     justify-content: flex-start;
     flex-grow: 1;
-    padding-bottom: 3em;
+    padding-bottom: 48px;
 }
 
 .informacion {
@@ -68,8 +43,12 @@ h2 {
 }
 
 .link-esta-web{
-    padding-top: 1em;
-    padding-bottom: 2em;
+    padding-top: 16px;
+    padding-bottom: 32px;
+}
+
+.link-dolarapi{
+    color: #4672C4;
 }
 
 .formulario {
@@ -78,7 +57,7 @@ h2 {
     justify-content: flex-end;
     flex-grow: 1;
     margin-right: 20px; 
-    padding-top: 2em;
+    padding-top: 32px;
     height: 100%;
 }
 
@@ -89,7 +68,7 @@ h2 {
 
 .datos-contacto {
     display: flex;
-    padding: 1.5em;
+    padding: 25px;
     border-radius: 15px;
     border: 2px solid #E5E5E5;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -111,8 +90,8 @@ h2 {
 }
 
 .datos-contacto img {
-    width: 10em;
-    padding-left: 2em;
+    width: 150px;
+    padding-left: 32px;
 }
 
 table {
@@ -120,9 +99,9 @@ table {
     border-color: #DEDEDE;
     background-color:#F2F2F2;
     border: solid 1px #F2F2F2;
-    border-radius: 15px 25px 15px 25px;
-    height: 22em;
-    padding: 1.5em;
+    border-radius: 25px;
+    height: 350px;
+    padding: 25px;
 }
 
 label {
@@ -130,25 +109,23 @@ label {
     justify-content: flex-start;
 }
 
-
 input {
     display: flex;
-    padding: 0.35em;
-    width: 196px;
+    padding: 5px;
+    width: 93%;
 }
 
 .botones{
     display: flex;
     justify-content: flex-end;
-    gap: 1em;
-    padding-top: 0.5em;
-    padding-right: 3em;
+    gap: 10px;
+    padding-top: 10px;
+    padding-right: 50px;
 }
 
 .botones button{
-    font-size: 1.00em;
-    padding: 0.50em 1.5em 0.50em 1.5em;
-    border-radius: 0.25em;
+    padding: 10px 20px;
+    border-radius: 10px;
     border: white;
 }
 
@@ -162,6 +139,11 @@ input {
     color: white;
 }
 .center-text {
+    padding-bottom: 20px;
     text-align: center;
     font-size: 20px; /* Ajusta el tamaño de la letra aquí */
+}
+
+.botones > button:hover{
+    cursor: pointer;
 }

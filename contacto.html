@@ -53,35 +53,36 @@
                 </div>
             </div>
             <div class="contenido-principal">
-                <nav class="migas-de-pan">
-                    <p><b>Usted está aquí:</b> <a href="index.html">Inicio</a> / Contacto</p>
-                </nav>
+                <div class="contenedor-migas">
+                    <nav class="migas-de-pan">
+                        <p>Usted está aquí: <a href="index.html">Inicio</a> / Contacto</p>
+                    </nav>
+                </div>
                 <div class="contenido-formulario">
                     <div class="contenedor-formulario">
-                        <h2>Contacto Web Cotizaciones</h2>
+                        <h1 class="titulo">Contacto Web Cotizaciones</h1>
                         <div class="formulario-informacion">
                             <div class="formulario">
                                 <table>
                                     <tr>
                                         <td class="center-text"><b>DATOS DE CONTACTO</b></td>
-
                                     <tr>
                                         <td> <label for="nombre">Nombre:</label> </td>
                                         <td><input type="text" id="nombre" name="nombre" required></td>
                                     </tr>
                                     <tr>
                                         <td><label for="email"> Email:</label></td>
-                                        <td><input type="text" id="email"></td>
+                                        <td><input type="text" id="email" required></td>
                                     </tr>
                                     <tr>
                                         <td><label for="Mensaje"> Mensaje:</label></td>
-                                        <td><textarea name="Mensaje" id="Mensaje" rows="10" cols="25"></textarea></td>
+                                        <td><textarea name="Mensaje" id="Mensaje" rows="10" cols="25" required></textarea></td>
                                     </tr>
                                     
                                 </table>
                                 <div class="botones">
-                                    <button class="limpiar">Limpiar</button>
-                                    <button class="enviar">Enviar</button>
+                                    <button type="button" class="limpiar">Limpiar</button>
+                                    <button type="button" class="enviar">Enviar</button>
                                 </div>    
 
                             </div>
@@ -90,8 +91,7 @@
                                 <p>Si tiene alguna sugerencia o inconveniente por favor complete el siguiente formulario
                                     y
                                     envíenoslo. Lo contactaremos a la brevedad.</p>
-                                <p class="link-esta-web">Esta web está desarrollada utilizando <a
-                                        href="https://dolarapi.com/">https://dolarapi.com/</a></p>
+                                <p class="link-esta-web">Esta web está desarrollada utilizando <a class="link-dolarapi" href="https://dolarapi.com/">https://dolarapi.com/</a></p>
                                 <div class="datos-contacto">
                                     <div class="datos-utn">
                                         <h3>DATOS DE CONTACTO</h3>
