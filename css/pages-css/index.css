@@ -5,7 +5,7 @@
     padding: 0;
 }
 
-.contenido-principal {
+.borde-contenedor{
     border: 1px solid green;
     border-radius: 20px;
     margin: 10px;
@@ -16,6 +16,7 @@
     display: flex;
     justify-content: end;
     align-items: center;
+    width: 98%;
 }
 
 .contenedor-migas a {
@@ -30,9 +31,7 @@
     margin-bottom: 20px;
 }
 .contenedor {
-    max-width: 450px; /* Define el ancho máximo del contenedor */
-
-   
+    max-width: 545px; /* Define el ancho máximo del contenedor */
 }
 .filtro {
     background-color: #e0e0e0;
@@ -60,7 +59,7 @@
     border-radius: 5px;
     cursor: pointer;
 }
-body > main > section > div.contenido-principal > div.contenedor > div.filtro > button > i{
+body > main > section > div.contenido-principal > div.borde-contenedor > div.contenedor > div.filtro > button > i{
     color: green;
     font-size: 20px;
 }
@@ -88,7 +87,7 @@ p {
 
 .cotizacion {
     flex-basis: 30%;
-    padding: 20px;
+    padding: 20px 60px;
     border-radius: 10px;
     text-align: center;
     display: flex;
@@ -105,12 +104,11 @@ p {
 .cont-title {
     display: flex;
     justify-content: space-between;
-    width: 100%;
     font-family: Roboto, sans-serif;
 }
 .cont-precio {
     display: flex;
-    justify-content: end;
+    justify-content: space-around;
     font-family: Roboto, sans-serif;
 }
 .cotizacion p {
@@ -121,14 +119,14 @@ p {
     text-transform: uppercase;
     color: #626161;
     font-weight: 500;
-    margin-right: 30px;
+    margin-left: 20px;
 }
 .cont-precio p {
     text-transform: uppercase;
     color: black;
     font-weight: 600;
     padding-top: 5px;
-    margin-right: 30px;
+    margin-left: 20px;
 }
 .contenedor-boton {
     display: flex;
