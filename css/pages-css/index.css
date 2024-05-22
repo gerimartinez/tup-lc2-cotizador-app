@@ -31,7 +31,7 @@
     margin-bottom: 20px;
 }
 .contenedor {
-    max-width: 545px; /* Define el ancho máximo del contenedor */
+    max-width: 545px; 
 }
 .filtro {
     background-color: #e0e0e0;

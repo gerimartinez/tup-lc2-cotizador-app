@@ -16,3 +16,107 @@
     margin: 10px;
     padding: 15px;
 }
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+}
+.cont-seleccionador {
+    padding: 2em;
+}
+.filtro {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;  
+    align-items: center; 
+}
+.filtro label {
+    font-family: Roboto, sans-serif;
+    margin-right: 10px;
+    
+}
+.filtro select {
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+.filtro button {
+    border: none;
+    background-color: #e0e0e0;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.contenedor-title-imagen {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contenedor-title {
+    /* margin-left: 27em; */
+}
+.contenedor-title p {
+    font-size: 30px;
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 600;
+    margin-left: 50px;
+}
+
+.contenedor-title img {
+    width: 500px;
+}
+
+.contenedor-tabla{
+    overflow: scroll;
+    scrollbar-width: none;
+    height: 200px;
+    border-radius: 30px;
+    border: 1px solid lightgrey;
+}
+
+.tabla {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td{
+    border-left: 1px solid lightgrey;
+    font-family: "Roboto Condensed", sans-serif;
+
+}
+
+th, td {
+    padding: 8px;
+    font-family: "Roboto Condensed", sans-serif;
+
+}
+
+.celda-cotizaciones{
+    background-color: #dae2f3;
+    position: sticky;
+    top: 0;
+    bottom: 0;
+}
+
+.celda-fecha{
+    color: #4672c4;
+    background-color: #ededed;
+}
+
+.celda-contenido{
+    text-align: center;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+
+#up{
+    color: rgb(63, 255, 63);
+    font-size: 20px;
+}
+#down{
+    color: red;
+    font-size: 20px;
+}
