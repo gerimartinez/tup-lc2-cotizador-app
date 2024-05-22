@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/common.css">
-
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css">
+    <link rel="stylesheet" href="/tup-lc2-cotizador-lau/css/pages-css/contacto.css">
+    <link rel="stylesheet" href="css/pages-css/contacto.css">
     <title>Contacto</title>
 </head>
+
 <body>
     <header>
-        <div class="background-header">
-            
-        </div> 
+        <div class="background-header"></div>
         <div class="contenedor-titulo">
             <i class="fa-solid fa-coins"></i>
             <h1>Cotizador de Monedas</h1>
@@ -20,13 +21,13 @@
     </header>
     <main>
         <section>
-           <div class="barra-lateral">
-                <nav><!--  queda hacer lo de visited-->
+            <div class="barra-lateral">
+                <nav>
                     <button class="boton-inicio">
-                       <i class="fa-solid fa-house"></i> 
-                        <a href="index.html"> INICIO</a> 
+                        <i class="fa-solid fa-house"></i>
+                        <a href="index.html"> INICIO</a>
                     </button>
-                    
+
                     <button class="boton-opciones">
                         <i class="fa-solid fa-folder-open"></i>
                         <a href="Miarchivo.html">MI ARCHIVO</a>
@@ -37,35 +38,83 @@
                     </button>
                     <button class="boton-opciones">
                         <i class="fa-solid fa-id-badge"></i>
-                        <a href="contacto.html">CONTACTENOS</a>  
+                        <a href="contacto.html">CONTACTENOS</a>
                     </button>
                 </nav>
                 <div class="contenedor-card">
                     <div>
                         <img src="img/imagen-en-el-trabajo.jpg" alt="">
-                        
                     </div>
                     <div class="contenedor-card-contenido">
                         <p>Geraldine Martinez</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur ducimus placeat esse officia nobis.
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur ducimus placeat esse
+                            officia nobis.</p>
                     </div>
                 </div>
             </div>
             <div class="contenido-principal">
                 <nav class="migas-de-pan">
-                    <p>Usted esta aquí: <a href="index.html">Inicio</a> / Contacto</p>
+                    <p><b>Usted está aquí:</b> <a href="index.html">Inicio</a> / Contacto</p>
                 </nav>
+                <div class="contenido-formulario">
+                    <div class="contenedor-formulario">
+                        <h2>Contacto Web Cotizaciones</h2>
+                        <div class="formulario-informacion">
+                            <div class="formulario">
+                                <table>
+                                    <tr>
+                                        <td class="center-text"><b>DATOS DE CONTACTO</b></td>
 
-            
-            </div>  
-        </section>
-       
+                                    <tr>
+                                        <td> <label for="nombre">Nombre:</label> </td>
+                                        <td><input type="text" id="nombre" name="nombre" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="email"> Email:</label></td>
+                                        <td><input type="text" id="email"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="Mensaje"> Mensaje:</label></td>
+                                        <td><textarea name="Mensaje" id="Mensaje" rows="10" cols="25"></textarea></td>
+                                    </tr>
+                                    
+                                </table>
+                                <div class="botones">
+                                    <button class="limpiar">Limpiar</button>
+                                    <button class="enviar">Enviar</button>
+                                </div>    
+
+                            </div>
+
+                            <div class="informacion">
+                                <p>Si tiene alguna sugerencia o inconveniente por favor complete el siguiente formulario
+                                    y
+                                    envíenoslo. Lo contactaremos a la brevedad.</p>
+                                <p class="link-esta-web">Esta web está desarrollada utilizando <a
+                                        href="https://dolarapi.com/">https://dolarapi.com/</a></p>
+                                <div class="datos-contacto">
+                                    <div class="datos-utn">
+                                        <h3>DATOS DE CONTACTO</h3>
+                                        <p>Universidad Tecnológica Nacional</p>
+                                        <p>ZEBALLOS 1341 - S2000BQA</p>
+                                        <p>ROSARIO</p>
+                                        <p>0341-4481871</p>
+                                    </div>
+                                    <div class="img-utn">
+                                        <img src="img/UTN" alt="UTN Logo" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
     </main>
     <footer>
         <div>
             <p class="titulo-footer">INSTITUCIONAL</p>
             <ul>
-                <li class="signo"><a href="#">¿Quienes Somos?</a></li>
+                <li class="signo"><a href="#">¿Quiénes Somos?</a></li>
                 <li class="signo"><a href="#">Socios Estratégicos</a></li>
                 <li class="signo"><a href="#">Trabaje con Nosotros</a></li>
                 <li class="signo"><a href="#">Ayuda</a></li>
@@ -83,14 +132,14 @@
         <div>
             <p class="titulo-footer">CONTACTO</p>
             <ul>
-                <li class="contacto">FACULTAD REGIONAL ROSARIO Universidad Tecnologica Nacional</li>
+                <li class="contacto">FACULTAD REGIONAL ROSARIO Universidad Tecnológica Nacional</li>
                 <li class="contacto">CONTACTOS: ZEBALLOS 1341-S2000BQA-ROSARIO</li>
                 <li class="contacto">0341-4481871</li>
             </ul>
         </div>
         <div>
             <ul class="desarrollado-por">
-                <li class="desarrollo"><b>Desarrolado por</b></li>
+                <li class="desarrollo"><b>Desarrollado por</b></li>
                 <li class="desarrollo">Geraldine Martinez (51230)</li>
                 <li class="desarrollo">Delfina Marmirolli (53383)</li>
                 <li class="desarrollo">Lautaro Bidrera (53349)</li>
@@ -98,9 +147,8 @@
                 <li class="desarrollo">TUP08 - 2024</li>
             </ul>
         </div>
-        
-        <pre class="p-final-footer">TUP - Catedra de Laboratorio de Computacion 2 - Año 2024</pre>
-        
+        <pre class="p-final-footer">TUP - Cátedra de Laboratorio de Computación 2 - Año 2024</pre>
     </footer>
 </body>
+
 </html>

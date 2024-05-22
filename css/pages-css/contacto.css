@@ -1,4 +1,160 @@
-* {
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f5f5f5;
+    font-weight: 550;
+}
+
+.contenido-principal{
+    height: 40em;
+    background-color: white;
+}
+
+a {
+    color: #4672C4;
+}
+
+.migas-de-pan p{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 5em;
+    text-decoration: solid;
+    font-size: 1.1em;
+}
+
+.migas-de-pan a{
+    color: black;
+}
+
+.contenedor-formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px;
+    border: 1px solid #BDC6DF;
+    border-radius: 15px;
+}
+
+h2 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 1em;
+}
+
+.formulario-informacion {
+    display: flex;
+    padding-top: 2em;
+    padding-left: 1em;
+    justify-content: flex-start;
+    flex-grow: 1;
+    padding-bottom: 3em;
+}
+
+.informacion {
+    width: 48%;
+    padding: 20px;
+    border-radius: 10px;
+    flex-grow: 1;
+}
+
+.link-esta-web{
+    padding-top: 1em;
+    padding-bottom: 2em;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-grow: 1;
+    margin-right: 20px; 
+    padding-top: 2em;
+    height: 100%;
+}
+
+.informacion p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.datos-contacto {
+    display: flex;
+    padding: 1.5em;
+    border-radius: 15px;
+    border: 2px solid #E5E5E5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.datos-utn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    text-decoration: solid;
+    margin: 0%;
+}
+
+.img-utn{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+}
+
+.datos-contacto img {
+    width: 10em;
+    padding-left: 2em;
+}
+
+table {
+    width: 100%;
+    border-color: #DEDEDE;
+    background-color:#F2F2F2;
+    border: solid 1px #F2F2F2;
+    border-radius: 15px 25px 15px 25px;
+    height: 22em;
+    padding: 1.5em;
+}
+
+label {
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+input {
+    display: flex;
+    padding: 0.35em;
+    width: 196px;
+}
+
+.botones{
+    display: flex;
+    justify-content: flex-end;
+    gap: 1em;
+    padding-top: 0.5em;
+    padding-right: 3em;
+}
+
+.botones button{
+    font-size: 1.00em;
+    padding: 0.50em 1.5em 0.50em 1.5em;
+    border-radius: 0.25em;
+    border: white;
+}
+
+.limpiar {
+    background-color: grey;
+    color: white;
+}
+
+.enviar {
+    background-color: #00B050;
+    color: white;
+}
+.center-text {
+    text-align: center;
+    font-size: 20px; /* Ajusta el tamaño de la letra aquí */
 }
