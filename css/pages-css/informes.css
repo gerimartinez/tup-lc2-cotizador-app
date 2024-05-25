@@ -22,13 +22,14 @@
     justify-content: center;
 }
 .cont-seleccionador {
-    padding: 2em;
+    padding: 32px;
+    align-content: center;
 }
 .filtro {
     background-color: #e0e0e0;
     border-radius: 10px;
     padding: 20px;
-    display: flex;  
+    display: flex;
     align-items: center; 
 }
 .filtro label {
@@ -55,9 +56,10 @@
     justify-content: space-between;
 }
 
-.contenedor-title {
-    /* margin-left: 27em; */
+.contenedor-title{
+    padding-left: 20px;
 }
+
 .contenedor-title p {
     font-size: 30px;
     font-family: "Roboto Condensed", sans-serif;
@@ -111,6 +113,11 @@ th, td {
     font-family: "Roboto Condensed", sans-serif;
 }
 
+.compartir-info{
+    padding-bottom: 5px;
+    padding-left: 20px;
+}
+
 
 #up{
     color: rgb(63, 255, 63);
@@ -118,5 +125,15 @@ th, td {
 }
 #down{
     color: red;
+    font-size: 20px;
+}
+
+#icono-info{
+    color: #4672c4;
+    font-size: xx-large
+}
+
+#icono-moneda{
+    color: green;
     font-size: 20px;
 }

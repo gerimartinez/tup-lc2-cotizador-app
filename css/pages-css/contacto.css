@@ -112,12 +112,6 @@ label {
     justify-content: flex-start;
 }
 
-input {
-    display: flex;
-    padding: 5px;
-    width: 93%;
-}
-
 .botones{
     display: flex;
     justify-content: flex-end;
@@ -126,7 +120,7 @@ input {
     padding-right: 50px;
 }
 
-.botones button{
+.botones input{
     padding: 10px 20px;
     border-radius: 10px;
     border: white;
@@ -147,6 +141,12 @@ input {
     font-size: 20px; /* Ajusta el tamaño de la letra aquí */
 }
 
-.botones > button:hover{
+.limpiar:hover{
     cursor: pointer;
+    background-color: rgb(148, 148, 148);
+}
+
+.enviar:hover{
+    cursor: pointer;
+    background-color: #03ce5e;
 }
