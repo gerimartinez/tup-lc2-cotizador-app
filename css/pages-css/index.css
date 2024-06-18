@@ -133,10 +133,20 @@ p {
 }
 .contenedor-boton button {
     border: none;
-    background-color: transparent;
+    background-color: #ffffff;
     cursor: pointer;
 }
+.contenedor-boton button:hover {
+    background-color: transparent; 
+}
 
+.contenedor-boton button i {
+    color: #000000; 
+}
+
+.contenedor-boton button:hover i {
+    color: #972424; 
+}
 .fa-solid {
     font-size: 25px;
 }
