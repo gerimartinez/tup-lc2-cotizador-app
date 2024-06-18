@@ -10,9 +10,7 @@
 </head>
 <body>
     <header>
-        <div class="background-header">
-            
-        </div> 
+        <div class="background-header"></div> 
         <div class="contenedor-titulo">
             <i class="fa-solid fa-coins"></i>
             <h1>Cotizador de Monedas</h1>
@@ -43,7 +41,6 @@
                 <div class="contenedor-card">
                     <div>
                         <img src="img/imagen-en-el-trabajo.jpg" alt="">
-                        
                     </div>
                     <div class="contenedor-card-contenido">
                         <p>Geraldine Martinez</p>
@@ -54,7 +51,7 @@
             <div class="contenido-principal">
                 <div class="contenedor-migas">
                    <nav class="migas-de-pan">
-                        <p>Usted esta aquí: <a href="#">Inicio</a></p>
+                        <p>Usted está aquí: <a href="#">Inicio</a></p>
                     </nav> 
                 </div>
                 <div class="borde-contenedor">
@@ -65,7 +62,7 @@
                         <div class="filtro">
                             <label for="moneda">Seleccione una moneda:</label>
                             <select id="moneda">
-                                <option value="empty">
+                                <option value="empty"></option>
                                 <option value="dolar-oficial">Dólar Oficial</option>
                                 <option value="dolar-blue">Dólar Blue</option>
                                 <option value="dolar-bolsa">Dólar Bolsa (MEP)</option>
@@ -78,141 +75,25 @@
                                 <option value="peso-chileno">Peso Chileno</option>
                                 <option value="peso-uruguayo">Peso Uruguayo</option>
                             </select>
-                            <button>
+                            <button id="buscar">
                                 <i class="fa-solid fa-magnifying-glass-dollar"></i>
                             </button>
                         </div>
-                        
                     </div>
                     <div class="p-datos">
-                            <p>Datos actualizados al 12/05/2024 18:30hs</p>
+                        <p id="last-updated">Datos actualizados al: </p>
                     </div>
-                    <div class="grilla">
-                        <div class="cotizacion">
-                            <div>
-                                <p>OFICIAL</p> 
-                            </div>
-                        <div class="contenedor-precio">
-                            <div class="cont-title">
-                                <p>Compra</p>
-                                <p>Venta</p>
-                            </div>
-                            <div class="cont-precio">
-                                <p>$847</p>
-                                <p>$887</p> 
-                            </div>  
-                        </div>
-                        </div>
-                        <div class="contenedor-boton">
-                            <button>
-                                <i class="fa-solid fa-star"></i>
-                            </button>
-                        </div>
-                        <div class="cotizacion">
-                            <div>
-                                <p>BLUE</p> 
-                            </div>
-                        <div class="contenedor-precio">
-                            <div class="cont-title">
-                                <p>Compra</p>
-                                <p>Venta</p>
-                            </div>
-                            <div class="cont-precio">
-                                <p>$995</p>
-                                <p>$1015</p> 
-                            </div>  
-                        </div>
-                        </div>
-                        <div class="contenedor-boton">
-                            <button>
-                                <i class="fa-solid fa-star"></i>
-                            </button>
-                        </div>
-                        <div class="cotizacion">
-                            <div>
-                                <p>TARJETA</p> 
-                            </div>
-                        <div class="contenedor-precio">
-                            <div class="cont-title">
-                                <p>Compra</p>
-                                <p>Venta</p>
-                            </div>
-                            <div class="cont-precio">
-                                <p>$1355.2</p>
-                                <p>$1419.2</p> 
-                            </div>  
-                        </div>
-                        </div>
-                        <div class="contenedor-boton">
-                            <button>
-                                <i class="fa-solid fa-star"></i>
-                            </button>
-                        </div>
-                        <div class="cotizacion">
-                            <div>
-                                <p>MEP</p> 
-                            </div>
-                        <div class="contenedor-precio">
-                            <div class="cont-title">
-                                <p>Compra</p>
-                                <p>Venta</p>
-                            </div>
-                            <div class="cont-precio">
-                                <p>$996.09</p>
-                                <p>$1000.6</p> 
-                            </div>  
-                        </div>
-                        </div>
-                        <div class="contenedor-boton">
-                            <button>
-                                <i class="fa-solid fa-star"></i>
-                            </button>
-                        </div>
-                        <div class="cotizacion">
-                            <div>
-                                <p>CCL</p> 
-                            </div>
-                        <div class="contenedor-precio">
-                            <div class="cont-title">
-                                <p>Compra</p>
-                                <p>Venta</p>
-                            </div>
-                            <div class="cont-precio">
-                                <p>$1030.6</p>
-                                <p>$1038.6</p> 
-                            </div>  
-                        </div>
-                        </div>
-                        <div class="contenedor-boton">
-                            <button>
-                                <i class="fa-solid fa-star"></i>
-                            </button>
-                        </div>
-                        <div class="cotizacion">
-                            <div>
-                                <p>CRIPTO</p> 
-                            </div>
-                        <div class="contenedor-precio">
-                            <div class="cont-title">
-                                <p>Compra</p>
-                                <p>Venta</p>
-                            </div>
-                            <div class="cont-precio">
-                                <p>$1050</p>
-                                <p>$1086</p> 
-                            </div>  
-                        </div>
-                        </div>
-                        <div class="contenedor-boton">
-                            <button>
-                                <i class="fa-solid fa-star"></i>
-                            </button>
-                        </div>
+                    <div id="cotizaciones-container" class="grilla">
+                        <!-- Cotizaciones serán insertadas aquí -->
                     </div>
                     <div class="texto-final">
                         <i class="fa-solid fa-exclamation"></i>
                         <p class="texto">Haga clic en la estrella para guardar los datos de la cotización en sus favoritos</p>
                         <p class="datos-obtenidos">Datos obtenidos de <a href="https://dolarapi.com" class="datos-link">DolarApi.com</a></p>
+                    </div>
+                    <div id="error-message" class="texto-final" style="display: none;">
+                        <i class="fa-solid fa-exclamation"></i>
+                        <p class="texto">Error al obtener datos. Intente nuevamente más tarde.</p>
                     </div>
                 </div>
             </div>
@@ -258,5 +139,6 @@
         </div>
         <pre class="p-final-footer">TUP - Catedra de Laboratorio de Computacion 2 - Año 2024</pre>
     </footer>
+    <script src="js/pages-js/index.js"></script>
 </body>
 </html>
