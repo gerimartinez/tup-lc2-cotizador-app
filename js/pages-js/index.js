@@ -26,7 +26,7 @@ const fetchData = async () => {
 
 const populateTable = (data) => {
     const container = document.getElementById('cotizaciones-container');
-    container.innerHTML = ''; // Clear previous data
+    container.innerHTML = '';
 
     data.forEach(item => {
         const cotizacionDiv = document.createElement('div');
@@ -104,7 +104,7 @@ const showLastUpdated = () => {
 
 document.getElementById('buscar').addEventListener('click', () => {
     const selectedCurrency = document.getElementById('moneda').value;
-    if (selectedCurrency === 'empty') {
+    if (selectedCurrency === 'todas') {
         fetchData();
     } else {
         const url = urls.find(u => u.name.toLowerCase().includes(selectedCurrency.replace('-', '')))?.url;
@@ -128,5 +128,4 @@ const fetchSingleData = async (url, selectedCurrency) => {
 
 window.onload = fetchData;
 
-// Update data every 5 minutes
 setInterval(fetchData, 300000);

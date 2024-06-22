@@ -17,6 +17,8 @@
     margin: 20px;
     border: 1px solid green;
     border-radius: 15px;
+    background-color: white;
+    padding: 20px;
 }
 
 .titulo {
@@ -62,6 +64,22 @@
     padding-top: 32px;
     height: 100%;
 }
+table {
+    width: 100%;
+}
+td {
+    padding: 10px;
+}
+
+#form {
+    width: 90%;
+    border-color: #DEDEDE;
+    background-color: #F2F2F2;
+    border: solid 1px #F2F2F2;
+    border-radius: 25px;
+    padding: 25px;
+    padding-right: 50px;
+}
 
 .informacion p {
     font-size: 16px;
@@ -97,19 +115,20 @@
     padding-left: 32px;
 }
 
-table {
-    width: 100%;
-    border-color: #DEDEDE;
-    background-color:#F2F2F2;
-    border: solid 1px #F2F2F2;
-    border-radius: 25px;
-    height: 350px;
-    padding: 25px;
-}
 
 label {
-    display: flex;
-    justify-content: flex-start;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: "Roboto Condensed", sans-serif;
 }
 
 .botones{
@@ -123,7 +142,7 @@ label {
 .botones input{
     padding: 10px 20px;
     border-radius: 10px;
-    border: white;
+    border: none;
 }
 
 .limpiar {
@@ -138,7 +157,7 @@ label {
 .center-text {
     padding-bottom: 20px;
     text-align: center;
-    font-size: 20px; /* Ajusta el tamaño de la letra aquí */
+    font-size: 20px;
 }
 
 .limpiar:hover{
@@ -150,3 +169,4 @@ label {
     cursor: pointer;
     background-color: #03ce5e;
 }
+

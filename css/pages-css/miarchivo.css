@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
 }
-
+h1 {
+    padding: 5px;
+}
 .contenedor-migas {
     display: flex;
     justify-content: end;
@@ -57,7 +59,7 @@ th, td {
     background-color: #ededed;
 }
 
-.celda-contenido{
+tr{
     text-align: center;
 }
 
@@ -66,7 +68,7 @@ th, td {
     font-size: xx-large;
 }
 
-#borrar{
-    color: #c55a11;
+.eliminar{
+    color: #c51111;
     font-size: x-large;
 }

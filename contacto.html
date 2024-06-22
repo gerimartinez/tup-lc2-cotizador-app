@@ -6,10 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css">
-    <link rel="stylesheet" href="/tup-lc2-cotizador-lau/css/pages-css/contacto.css">
     <link rel="stylesheet" href="css/pages-css/contacto.css">
     <!-- libreria emails -->
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+    emailjs.init('-eGY64KNrW0OETK6V')
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert CDN -->
     <title>Contacto</title>
 </head>
 
@@ -65,28 +70,31 @@
                         <h1 class="titulo">Contacto Web Cotizaciones</h1>
                         <div class="formulario-informacion">
                             <div class="formulario">
-                                <table>
+                                <form id="form">
                                     <tr>
                                         <td class="center-text"><b>DATOS DE CONTACTO</b></td>
-                                    <tr>
-                                        <td> <label for="nombre">Nombre:</label> </td>
-                                        <td><input type="text" id="nombre" name="nombre" required></td>
-                                    </tr>
-                                    <tr>
-                                        <td><label for="email"> Email:</label></td>
-                                        <td><input type="text" id="email" name="email" required></td>
-                                    </tr>
-                                    <tr>
-                                        <td><label for="Mensaje"> Mensaje:</label></td>
-                                        <td><textarea name="Mensaje" id="Mensaje" rows="10" cols="25" required></textarea></td>
-                                    </tr>
+                                        <div>
+                                            <label for="nombre">Nombre:</label>
+                                            <input type="text" id="nombre" name="nombre" required>
+                                            <div id="nombre-error" class="error-message"></div>
+                                        </div>
+                                        <div>
+                                            <label for="email">Email:</label>
+                                            <input type="email" id="email" name="email" required>
+                                            <div id="email-error" class="error-message"></div>
+                                        </div>
+                                        <div>
+                                            <label for="mensaje">Mensaje:</label>
+                                            <textarea id="mensaje" name="mensaje" rows="5" cols="30" required></textarea>
+                                            <div id="mensaje-error" class="error-message"></div>
+                                        </div>
+                                  
+                                    <div class="botones">
+                                        <input class="limpiar" type="reset" value="Limpiar">
+                                        <input type="submit" id="button" value="Enviar" class="enviar" >
+                                    </div>
+                                </form>
                                     
-                                </table>
-                                <div class="botones">
-                                    <input class="limpiar" type="reset" value="Limpiar">
-                                    <input class="enviar" type="submit" value="Enviar">
-                                </div>    
-
                             </div>
 
                             <div class="informacion">
@@ -152,6 +160,8 @@
         </div>
         <pre class="p-final-footer">TUP - Cátedra de Laboratorio de Computación 2 - Año 2024</pre>
     </footer>
+    <script src="js/pages-js/contacto.js"></script>
+
 </body>
 
 </html>
