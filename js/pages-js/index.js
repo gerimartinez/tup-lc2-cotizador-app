@@ -1,15 +1,15 @@
 const urls = [
-    { name: 'DolarOficial', url: 'https://dolarapi.com/v1/dolares/oficial' },
-    { name: 'DolarBlue', url: 'https://dolarapi.com/v1/dolares/blue' },
-    { name: 'DolarBolsa', url: 'https://dolarapi.com/v1/dolares/bolsa' },
-    { name: 'DolarCCL', url: 'https://dolarapi.com/v1/dolares/contadoconliqui' },
-    { name: 'DolarTarjeta', url: 'https://dolarapi.com/v1/dolares/tarjeta' },
-    { name: 'DolarMayorista', url: 'https://dolarapi.com/v1/dolares/mayorista' },
-    { name: 'DolarCripto', url: 'https://dolarapi.com/v1/dolares/cripto' },
+    { name: 'Dolar Oficial', url: 'https://dolarapi.com/v1/dolares/oficial' },
+    { name: 'Dolar Blue', url: 'https://dolarapi.com/v1/dolares/blue' },
+    { name: 'Dolar Bolsa', url: 'https://dolarapi.com/v1/dolares/bolsa' },
+    { name: 'Dolar CCL', url: 'https://dolarapi.com/v1/dolares/contadoconliqui' },
+    { name: 'Dolar Tarjeta', url: 'https://dolarapi.com/v1/dolares/tarjeta' },
+    { name: 'Dolar Mayorista', url: 'https://dolarapi.com/v1/dolares/mayorista' },
+    { name: 'Dolar Cripto', url: 'https://dolarapi.com/v1/dolares/cripto' },
     { name: 'Euro', url: 'https://dolarapi.com/v1/cotizaciones/eur' },
-    { name: 'RealBrasileño', url: 'https://dolarapi.com/v1/cotizaciones/brl' },
-    { name: 'PesoChileno', url: 'https://dolarapi.com/v1/cotizaciones/clp' },
-    { name: 'PesoUruguayo', url: 'https://dolarapi.com/v1/cotizaciones/uyu' }
+    { name: 'Real Brasileño', url: 'https://dolarapi.com/v1/cotizaciones/brl' },
+    { name: 'Peso Chileno', url: 'https://dolarapi.com/v1/cotizaciones/clp' },
+    { name: 'Peso Uruguayo', url: 'https://dolarapi.com/v1/cotizaciones/uyu' }
 ];
 
 const fetchData = async () => {
