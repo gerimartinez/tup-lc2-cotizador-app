@@ -6,13 +6,15 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/pages-css/informes.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+    <style type="text/css">/* Chart.js */
+    @keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style>
+    <script src="js/pages-js/informes.js" defer></script>
     <title>Informes</title>
 </head>
 <body>
     <header>
-        <div class="background-header">
-            
-        </div> 
+        <div class="background-header"></div> 
         <div class="contenedor-titulo">
             <i class="fa-solid fa-coins"></i>
             <h1>Cotizador de Monedas</h1>
@@ -20,13 +22,12 @@
     </header>
     <main>
         <section>
-           <div class="barra-lateral">
-                <nav><!--  queda hacer lo de visited-->
+            <div class="barra-lateral">
+                <nav>
                     <button class="boton-inicio">
                        <i class="fa-solid fa-house"></i> 
-                        <a href="index.html"> INICIO</a> 
+                       <a href="index.html"> INICIO</a> 
                     </button>
-                    
                     <button class="boton-opciones">
                         <i class="fa-solid fa-folder-open"></i>
                         <a href="Miarchivo.html">MI ARCHIVO</a>
@@ -43,11 +44,10 @@
                 <div class="contenedor-card">
                     <div>
                         <img src="img/imagen-en-el-trabajo.jpg" alt="">
-                        
                     </div>
                     <div class="contenedor-card-contenido">
                         <p>Geraldine Martinez</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur ducimus placeat esse officia nobis.
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur ducimus placeat esse officia nobis.</p>
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                             <div class="filtro">
                                 <label for="moneda">Seleccione una moneda:</label>
                                 <select id="moneda">
-                                    <option value="empty">
+                                    <option value="empty"></option>
                                     <option value="dolar-oficial">Dólar Oficial</option>
                                     <option value="dolar-blue">Dólar Blue</option>
                                     <option value="dolar-bolsa">Dólar Bolsa (MEP)</option>
@@ -81,94 +81,11 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="contenedor-title-imagen">
-                            <div>
-                               <div class="contenedor-title">
-                                    <p>Informe</p>
-                                    <img src="img/grafico.png" alt="">
-                                </div> 
-                            </div>
-                            
-                        </div>
                     </div>
-                    <!---->
+                    <canvas id="miGrafica1" style="display: block; height: 708px; width: 1417px;" width="1180" height="590" class="chartjs-render-monitor"></canvas>
                     <div class="compartir-info">
                         <i class="fa-solid fa-envelope-open-text" id="icono-info"></i>
-                        <a href="">Compartir información</a>
-                    </div>
-                    <!-- tabla -->
-                    <div class="contenedor-tabla">
-                        <table class="tabla">
-                            <thead>
-                                <tr class="celda-cotizaciones">
-                                    <th>MONEDA</th>
-                                    <th>FECHA</th>
-                                    <th>COMPRA</th>
-                                    <th>VENTA</th>
-                                    <th>VARIACIÓN</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="">
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                                <tr class="celda-fecha">
-                                    <th>Dólar Blue</th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                                <tr class="celda-contenido">
-                                    <th></th>
-                                    <td>15/05/2024</td>
-                                    <td>$995</td>
-                                    <td>$1015</td>
-                                    <td><i class="fa-regular fa-circle-up" id="up"></i></td>
-                                </tr>
-                                <tr class="celda-contenido">
-                                    <th></th>
-                                    <td>16/05/2024</td>
-                                    <td>$996.09</td>
-                                    <td>$1000.06</td>
-                                    <td><i class="fa-regular fa-circle-down" id="down"></i></td>
-                                </tr>
-                                <tr class="celda-contenido">
-                                    <th></th>
-                                    <td>17/05/2024</td>
-                                    <td>$1355.2</td>
-                                    <td>$1419.2</td>
-                                    <td><i class="fa-regular fa-circle-down" id="down"></i></td>
-                                </tr>
-                                <tr class="celda-contenido">
-                                    <th></th>
-                                    <td>18/05/2024</td>
-                                    <td>$1050</td>
-                                    <td>$1086</td>
-                                    <td><i class="fa-regular fa-circle-up" id="up"></i></td>
-                                </tr>
-                                <tr class="celda-contenido">
-                                    <th></th>
-                                    <td>19/05/2024</td>
-                                    <td>$1000</td>
-                                    <td>$1200</td>
-                                    <td><i class="fa-regular fa-circle-up" id="up"></i></td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr class="celda-cotizaciones">
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </tfoot>
-                        </table>
+                        <a href="">Enviar información</a>
                     </div>
                 </div>
             </div>  
@@ -212,10 +129,7 @@
                 <li class="desarrollo">TUP08 - 2024</li>  
             </ul>
         </div>
-        
         <pre class="p-final-footer">TUP - Catedra de Laboratorio de Computacion 2 - Año 2024</pre>
-        
     </footer>
-    <script src="js/pages-js/informes.js"></script>
 </body>
 </html>

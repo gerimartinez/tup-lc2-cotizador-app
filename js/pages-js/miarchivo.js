@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
     let informes = localStorage.getItem('informes');
-
     if (informes) {
         informes = JSON.parse(informes); //paso a obj
 
