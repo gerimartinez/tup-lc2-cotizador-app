@@ -2,17 +2,18 @@ document.addEventListener('DOMContentLoaded', function() {
     let informes = localStorage.getItem('informes');
     if (informes) {
         informes = JSON.parse(informes); //paso a obj
-
+        console.log(informes)
         const tablaBody = document.querySelector('.tabla tbody');
 
         if (informes.length > 0) {
 
             informes.forEach(informe => {
-                
+                const fechaSinHora = informe.date.split(',')[0];
+
                 const filaCotizacion = document.createElement('tr');
                 filaCotizacion.classList.add('celda-contenido');
                 filaCotizacion.innerHTML = `
-                    <th class='celda-fecha'>${informe.date}</th>
+                    <th class='celda-fecha'>${fechaSinHora}</th>
                     <td class>${informe.data.nombre}</td>
                     <td>${informe.data.compra}</td>
                     <td>${informe.data.venta}</td>

@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function actualizarGrafica(datosInformes) {
     // Ajusta estos nombres de campo según los datos que tengas en localStorage
-    const etiquetas = datosInformes.map(informe => informe.fecha);//hacer array-campo fecha // Campo 'fecha' en tus datos
+    const etiquetas = datosInformes.map(informe => informe.date.split(',')[0]);//hacer array-campo fecha // Campo 'fecha' en tus datos
     const datos = datosInformes.map(informe => informe.valor); // Campo 'valor' en tus datos
 
     const ctx = document.getElementById("miGrafica1").getContext("2d");
