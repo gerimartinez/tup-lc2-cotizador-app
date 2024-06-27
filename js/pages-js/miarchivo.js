@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 const filaCotizacion = document.createElement('tr');
                 filaCotizacion.classList.add('celda-contenido');
+                filaCotizacion.setAttribute('data-id', informe.id);
                 filaCotizacion.innerHTML = `
                     <th class='celda-fecha'>${fechaSinHora}</th>
                     <td class>${informe.data.nombre}</td>
@@ -24,7 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const btnEliminar = filaCotizacion.querySelector('.eliminar');
                 btnEliminar.addEventListener('click', function() {
-                    const id = informe.id;
+                    const nombre = informe.data.nombre;
+                    const fecha = informe.date;
+
                     Swal.fire({
                         title: '¿Estas seguro?',
                         text: 'Esta acción eliminara la cotización permanentemente.',
@@ -35,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         confirmButtonText: 'Si, eliminar'
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            eliminarCotizacion(id);
+                            eliminarCotizacion(nombre, fecha);
                             Swal.fire(
                                 '¡Eliminado!',
                                 'La cotización ha sido eliminada.',
@@ -59,13 +62,13 @@ document.addEventListener('DOMContentLoaded', function() {
         tablaBody.appendChild(filaMensaje);
     }
 
-    function eliminarCotizacion(id) {
+    function eliminarCotizacion(nombre, fecha) {
         let informes = localStorage.getItem('informes');
-        
         if (informes) {
             informes = JSON.parse(informes);
-            informes = informes.filter(informe => informe.id !== id);
+            informes = informes.filter(informe => informe.data.nombre !== nombre || informe.date !== fecha);
             localStorage.setItem('informes', JSON.stringify(informes));
         }
     }
+
 });
