@@ -11,11 +11,16 @@ const urls = [
     { name: 'Peso Chileno', url: 'https://dolarapi.com/v1/cotizaciones/clp' },
     { name: 'Peso Uruguayo', url: 'https://dolarapi.com/v1/cotizaciones/uyu' }
 ];
-
 const fetchData = async () => {
     try {
         const responses = await Promise.all(urls.map(obj => fetch(obj.url).then(res => res.json())));
-        const data = urls.map((obj, index) => ({ name: obj.name, data: responses[index] }));
+        const data = urls.map((obj, index) => ({
+            name: obj.name,
+            data: {
+                ...responses[index], // Mantén todos los campos del objeto response original
+               date: new Date().toLocaleString() // Añade el campo 'date' con la fecha y hora actuales
+            }
+        }));
         populateTable(data);
         showLastUpdated();
     } catch (error) {
@@ -86,12 +91,12 @@ const populateTable = (data) => {
 
 const addToInforme = (item) => {
     const informes = JSON.parse(localStorage.getItem('informes')) || [];
-    const existing = informes.find(informe => informe.name === item.name && informe.date === item.data.date);
+    const existing = informes.find(informe => informe.name === item.name && informe.data.date === item.data.date);
 
     if (existing) {
         alert('La cotización ya se encuentra almacenada.');
     } else {
-        informes.push({ ...item, date: new Date().toLocaleString() });
+        informes.push({ ...item, date: new Date().toLocaleDateString() });
         localStorage.setItem('informes', JSON.stringify(informes));
         alert('Cotización agregada correctamente.');
     }
