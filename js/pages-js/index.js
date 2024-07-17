@@ -17,11 +17,50 @@ const fetchData = async () => {
         const data = urls.map((obj, index) => ({
             name: obj.name,
             data: {
-                ...responses[index], // Mantén todos los campos del objeto response original
-               date: new Date().toLocaleString() // Añade el campo 'date' con la fecha y hora actuales
+                ...responses[index],
+                date: new Date().toLocaleString()
             }
         }));
         populateTable(data);
+        showLastUpdated();
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        document.getElementById('error-message').style.display = 'block';
+    }
+};
+
+document.getElementById('buscar').addEventListener('click', () => {
+    const selectedCurrency = document.getElementById('moneda').value;
+    if (selectedCurrency === 'todas') {
+        fetchData();
+    } else {
+        const currencyMap = {
+            'dolar-oficial': 'Dolar Oficial',
+            'dolar-blue': 'Dolar Blue',
+            'dolar-bolsa': 'Dolar Bolsa',
+            'dolar-ccl': 'Dolar CCL',
+            'dolar-tarjeta': 'Dolar Tarjeta',
+            'dolar-mayorista': 'Dolar Mayorista',
+            'dolar-cripto': 'Dolar Cripto',
+            'euro': 'Euro',
+            'real': 'Real Brasileño',
+            'peso-chileno': 'Peso Chileno',
+            'peso-uruguayo': 'Peso Uruguayo'
+        };
+
+        const currencyName = currencyMap[selectedCurrency];
+        const url = urls.find(u => u.name === currencyName)?.url;
+        if (url) {
+            fetchSingleData(url, currencyName);
+        }
+    }
+});
+
+const fetchSingleData = async (url, selectedCurrency) => {
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        populateTable([{ name: selectedCurrency, data }]);
         showLastUpdated();
     } catch (error) {
         console.error('Error fetching data:', error);
@@ -107,30 +146,5 @@ const showLastUpdated = () => {
     document.getElementById('last-updated').textContent = `Datos actualizados al: ${lastUpdated}`;
 };
 
-document.getElementById('buscar').addEventListener('click', () => {
-    const selectedCurrency = document.getElementById('moneda').value;
-    if (selectedCurrency === 'todas') {
-        fetchData();
-    } else {
-        const url = urls.find(u => u.name.toLowerCase().includes(selectedCurrency.replace('-', '')))?.url;
-        if (url) {
-            fetchSingleData(url, selectedCurrency);
-        }
-    }
-});
-
-const fetchSingleData = async (url, selectedCurrency) => {
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        populateTable([{ name: selectedCurrency, data }]);
-        showLastUpdated();
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        document.getElementById('error-message').style.display = 'block';
-    }
-};
-
 window.onload = fetchData;
-
-setInterval(fetchData, 300000);
+setInterval(fetchData, 300000); // Actualizar cada 5 minutos
