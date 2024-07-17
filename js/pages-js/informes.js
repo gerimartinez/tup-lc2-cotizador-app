@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Obtener datos guardados en localStorage
     let informe = localStorage.getItem('informes');
     let datosInformes = JSON.parse(informe);
-    console.log(datosInformes)
+    console.log(datosInformes);
 
     if (informe && datosInformes.length > 0) {
         actualizarGrafica(datosInformes);
@@ -13,6 +13,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function actualizarGrafica(datosInformes) {
     const etiquetas = datosInformes.map(informe => informe.date.split(',')[0]);
+    /*const etiquetas = datosInformes.map(informe => {
+        const dateTime = informe.date.split(' '); // split the date and time into two parts
+        const date = dateTime[0]; // extract the date part
+        const time = dateTime[1]; // extract the time part
+        return `${date} ${time}`; // combine the date and time into a single string
+      });*/
 
     const colores = {
         'Dolar Blue': 'blue',
@@ -29,10 +35,10 @@ function actualizarGrafica(datosInformes) {
         // Añade más colores según sea necesario
     };
 
-    const datasets = datosInformes.map(informe => {
+    const datasetsVenta = datosInformes.map(informe => {
         return {
             label: informe.name,
-            data:  [informe.data.compra, informe.data.compra - 100, informe.data.compra + 500],
+            data: [informe.data.venta, informe.data.venta - 100, informe.data.venta + 500],
             borderColor: colores[informe.name] || 'black',
             backgroundColor: 'transparent',
             borderWidth: 1,
@@ -40,19 +46,33 @@ function actualizarGrafica(datosInformes) {
         };
     });
 
-    const ctx = document.getElementById("miGrafica1").getContext("2d");
-    new Chart(ctx, {
-        type: "line",
-        data: {
-            labels: etiquetas,
-            datasets: datasets
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
+    const datasetsCompra = datosInformes.map(informe => {
+        return {
+            label: informe.name,
+            data: [informe.data.compra, informe.data.compra - 100, informe.data.compra + 500],
+            borderColor: colores[informe.name] || 'black',
+            backgroundColor: 'transparent',
+            borderWidth: 1,
+            fill: false
+        };
+    });
+
+    const datasetsCombinados = datasetsVenta.concat(datasetsCompra);
+
+        const ctxCombinado = document.getElementById("miGraficaCombinada").getContext("2d");
+        new Chart(ctxCombinado, {
+            type: "line",
+            data: {
+                labels: etiquetas,
+                datasets: datasetsCombinados
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
         }
-    });
+    );
 }
