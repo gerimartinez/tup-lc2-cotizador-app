@@ -13,12 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function actualizarGrafica(datosInformes) {
     const etiquetas = datosInformes.map(informe => informe.date.split(',')[0]);
-    /*const etiquetas = datosInformes.map(informe => {
-        const dateTime = informe.date.split(' '); // split the date and time into two parts
-        const date = dateTime[0]; // extract the date part
-        const time = dateTime[1]; // extract the time part
-        return `${date} ${time}`; // combine the date and time into a single string
-      });*/
 
     const colores = {
         'Dolar Blue': 'blue',
@@ -37,7 +31,7 @@ function actualizarGrafica(datosInformes) {
 
     const datasetsVenta = datosInformes.map(informe => {
         return {
-            label: informe.name,
+            label: [informe.name, ' Venta'],
             data: [informe.data.venta, informe.data.venta - 100, informe.data.venta + 500],
             borderColor: colores[informe.name] || 'black',
             backgroundColor: 'transparent',
@@ -48,7 +42,7 @@ function actualizarGrafica(datosInformes) {
 
     const datasetsCompra = datosInformes.map(informe => {
         return {
-            label: informe.name,
+            label: [informe.name, ' Compra'],
             data: [informe.data.compra, informe.data.compra - 100, informe.data.compra + 500],
             borderColor: colores[informe.name] || 'black',
             backgroundColor: 'transparent',

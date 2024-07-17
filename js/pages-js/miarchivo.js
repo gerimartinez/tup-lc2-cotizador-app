@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 filaCotizacion.setAttribute('data-id', informe.id);
                 filaCotizacion.innerHTML = `
                     <th class='celda-fecha'>${fechaSinHora}</th>
-                    <td class>${informe.data.nombre}</td>
+                    <td class>${informe.name}</td>
                     <td>${informe.data.compra}</td>
                     <td>${informe.data.venta}</td>
                     <td class="eliminar"><i class="fa-solid fa-circle-xmark" data-id="${informe.id}"></i></td>
