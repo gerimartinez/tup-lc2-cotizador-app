@@ -72,3 +72,48 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+
+//IMPRIMIR LA VISTA ACTUAL
+document.addEventListener('DOMContentLoaded', function() {
+    // Código existente...
+    // Asocia el evento click al botón de imprimir
+    const btnImprimir = document.getElementById('btnImprimirVista');
+    if (btnImprimir) {
+        btnImprimir.addEventListener('click', function() {
+            imprSelec('vistaActual');
+        });
+    }
+});
+// Función imprSelec
+function imprSelec(nombre) {
+    var elemento = document.getElementById(nombre);
+
+    if (!elemento) {
+        console.error("Elemento con ID '" + nombre + "' no encontrado.");
+        return;
+    }
+
+    var contenido = elemento.innerHTML;
+    console.log("Contenido a imprimir:", contenido);
+
+    var contenidoOriginal = document.body.innerHTML;
+
+    var estiloImpresion = `
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th, td {
+                border: 1px solid black;
+                padding: 8px;
+                text-align: center;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+        </style>`;
+    document.body.innerHTML = estiloImpresion + contenido;
+    window.print();
+    document.body.innerHTML = contenidoOriginal;
+}
