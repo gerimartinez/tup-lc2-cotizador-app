@@ -63,11 +63,24 @@ tr{
     text-align: center;
 }
 
-#impresora{
+
+#btnImprimirVista {
+    background-color: blue;
+    color: white;
+    font-size: large;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#btnImprimirVista:hover {
+    background-color: #365a8c;
+}
+
+#impresora {
     color: #4672c4;
     font-size: xx-large;
 }
-
 .eliminar{
     color: #c51111;
     font-size: x-large;

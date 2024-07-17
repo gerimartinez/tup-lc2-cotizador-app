@@ -60,23 +60,25 @@
                 <div class="borde-contenedor">
                     <div class="titulo-mi-archivo">
                         <h1>Mi Archivo</h1>
-                        <i class="fa-solid fa-print" id="impresora"></i>
+                        <button id="btnImprimirVista"><i class="fas fa-print"></i></button> <!-- <i class="fa-solid fa-print" id="impresora"></i> -->
                     </div>
-                    <div class="contenedor-tabla">
-                        <table class="tabla">
-                            <thead>
-                                <tr class="celda-cotizaciones">
-                                    <th>FECHA</th>
-                                    <th>MONEDA</th>
-                                    <th>COMPRA</th>
-                                    <th>VENTA</th>
-                                    <th>ACCIÓN</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
+                    <div id="vistaActual"><!-- Agregue esto-->
+                        <div class="contenedor-tabla">
+                            <table class="tabla">
+                                <thead>
+                                    <tr class="celda-cotizaciones">
+                                        <th>FECHA</th>
+                                        <th>MONEDA</th>
+                                        <th>COMPRA</th>
+                                        <th>VENTA</th>
+                                        <th>ACCIÓN</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> <!-- Hasta aca-->
                 </div>
             </div>  
         </section>
