@@ -32,7 +32,7 @@ function actualizarGrafica(datosInformes) {
     const datasetsVenta = datosInformes.map(informe => {
         return {
             label: [informe.name, ' Venta'],
-            data: [informe.data.venta, informe.data.venta - 100, informe.data.venta + 500],
+            data: [informe.data.venta],
             borderColor: colores[informe.name] || 'black',
             backgroundColor: 'transparent',
             borderWidth: 1,
@@ -43,7 +43,7 @@ function actualizarGrafica(datosInformes) {
     const datasetsCompra = datosInformes.map(informe => {
         return {
             label: [informe.name, ' Compra'],
-            data: [informe.data.compra, informe.data.compra - 100, informe.data.compra + 500],
+            data: [informe.data.compra],
             borderColor: colores[informe.name] || 'black',
             backgroundColor: 'transparent',
             borderWidth: 1,
