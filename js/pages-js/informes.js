@@ -5,14 +5,41 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log(datosInformes);
 
     if (informe && datosInformes.length > 0) {
-        actualizarGrafica(datosInformes);
+        const datosAgrupados = agruparDatosPorFecha(datosInformes);
+        const monedasDisponibles = obtenerMonedasDisponibles(datosAgrupados);
+        actualizarGrafica(datosAgrupados, monedasDisponibles);
     } else {
         console.log('No hay datos de informes guardados');
     }
 });
 
-function actualizarGrafica(datosInformes) {
-    const etiquetas = datosInformes.map(informe => informe.date);
+function agruparDatosPorFecha(datosInformes) {
+    const datosAgrupados = {};
+
+    datosInformes.forEach(informe => {
+        if (!datosAgrupados[informe.date]) {
+            datosAgrupados[informe.date] = {};
+        }
+        datosAgrupados[informe.date][informe.name] = informe.data;
+    });
+
+    return datosAgrupados;
+}
+
+function obtenerMonedasDisponibles(datosAgrupados) {
+    const monedas = new Set();
+    
+    Object.values(datosAgrupados).forEach(dia => {
+        Object.keys(dia).forEach(moneda => {
+            monedas.add(moneda);
+        });
+    });
+    
+    return Array.from(monedas);
+}
+
+function actualizarGrafica(datosAgrupados, monedasDisponibles) {
+    const etiquetas = Object.keys(datosAgrupados);
 
     const colores = {
         'Dolar Blue': 'blue',
@@ -29,22 +56,22 @@ function actualizarGrafica(datosInformes) {
         // Añade más colores según sea necesario
     };
 
-    const datasetsVenta = datosInformes.map(informe => {
+    const datasetsVenta = monedasDisponibles.map(moneda => {
         return {
-            label: [informe.name, ' Venta'],
-            data: [informe.data.venta],
-            borderColor: colores[informe.name] || 'black',
+            label: [moneda, ' Venta'],
+            data: etiquetas.map(fecha => datosAgrupados[fecha][moneda]?.venta || 0),
+            borderColor: colores[moneda] || 'black',
             backgroundColor: 'transparent',
             borderWidth: 1,
             fill: false
         };
     });
 
-    const datasetsCompra = datosInformes.map(informe => {
+    const datasetsCompra = monedasDisponibles.map(moneda => {
         return {
-            label: [informe.name, ' Compra'],
-            data: [informe.data.compra],
-            borderColor: colores[informe.name] || 'black',
+            label: [moneda, ' Compra'],
+            data: etiquetas.map(fecha => datosAgrupados[fecha][moneda]?.compra || 0),
+            borderColor: colores[moneda] || 'black',
             backgroundColor: 'transparent',
             borderWidth: 1,
             fill: false
@@ -53,20 +80,19 @@ function actualizarGrafica(datosInformes) {
 
     const datasetsCombinados = datasetsVenta.concat(datasetsCompra);
 
-        const ctxCombinado = document.getElementById("miGraficaCombinada").getContext("2d");
-        new Chart(ctxCombinado, {
-            type: "line",
-            data: {
-                labels: etiquetas,
-                datasets: datasetsCombinados
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
+    const ctxCombinado = document.getElementById("miGraficaCombinada").getContext("2d");
+    new Chart(ctxCombinado, {
+        type: "line",
+        data: {
+            labels: etiquetas,
+            datasets: datasetsCombinados
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
                 }
             }
         }
-    );
+    });
 }
