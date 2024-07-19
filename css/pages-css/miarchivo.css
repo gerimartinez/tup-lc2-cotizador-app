@@ -65,8 +65,8 @@ tr{
 
 
 #btnImprimirVista {
-    background-color: blue;
-    color: white;
+    background-color: white;
+    color: blue;
     font-size: large;
     border: none;
     padding: 10px 20px;
