@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Obtener datos guardados en localStorage
     let informe = localStorage.getItem('informes');
     let datosInformes = JSON.parse(informe);
     console.log(datosInformes);
@@ -8,6 +7,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const datosAgrupados = agruparDatosPorFecha(datosInformes);
         const monedasDisponibles = obtenerMonedasDisponibles(datosAgrupados);
         actualizarGrafica(datosAgrupados, monedasDisponibles);
+        
+        document.getElementById('btnActualizar').addEventListener('click', function() {
+            const monedaSeleccionada = document.getElementById('moneda').value;
+            actualizarGrafica(datosAgrupados, monedasDisponibles, monedaSeleccionada);
+        });
     } else {
         console.log('No hay datos de informes guardados');
     }
@@ -28,17 +32,17 @@ function agruparDatosPorFecha(datosInformes) {
 
 function obtenerMonedasDisponibles(datosAgrupados) {
     const monedas = new Set();
-    
+
     Object.values(datosAgrupados).forEach(dia => {
         Object.keys(dia).forEach(moneda => {
             monedas.add(moneda);
         });
     });
-    
+
     return Array.from(monedas);
 }
 
-function actualizarGrafica(datosAgrupados, monedasDisponibles) {
+function actualizarGrafica(datosAgrupados, monedasDisponibles, monedaSeleccionada) {
     const etiquetas = Object.keys(datosAgrupados);
 
     const colores = {
@@ -53,30 +57,29 @@ function actualizarGrafica(datosAgrupados, monedasDisponibles) {
         'Real Brasileño': 'coral',
         'Peso Chileno': 'greenyellow',
         'Peso Uruguayo': 'peru',
-        // Añade más colores según sea necesario
     };
 
-    const datasetsVenta = monedasDisponibles.map(moneda => {
-        return {
+    const datasetsVenta = monedasDisponibles
+        .filter(moneda => monedaSeleccionada === 'todas' || moneda === monedaSeleccionada)
+        .map(moneda => ({
             label: [moneda, ' Venta'],
             data: etiquetas.map(fecha => datosAgrupados[fecha][moneda]?.venta || 0),
             borderColor: colores[moneda] || 'black',
             backgroundColor: 'transparent',
             borderWidth: 1,
             fill: false
-        };
-    });
+        }));
 
-    const datasetsCompra = monedasDisponibles.map(moneda => {
-        return {
+    const datasetsCompra = monedasDisponibles
+        .filter(moneda => monedaSeleccionada === 'todas' || moneda === monedaSeleccionada)
+        .map(moneda => ({
             label: [moneda, ' Compra'],
             data: etiquetas.map(fecha => datosAgrupados[fecha][moneda]?.compra || 0),
             borderColor: colores[moneda] || 'black',
             backgroundColor: 'transparent',
             borderWidth: 1,
             fill: false
-        };
-    });
+        }));
 
     const datasetsCombinados = datasetsVenta.concat(datasetsCompra);
 
