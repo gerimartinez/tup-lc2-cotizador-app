@@ -63,7 +63,7 @@ function actualizarGrafica(datosAgrupados, monedasDisponibles, monedaSeleccionad
         .filter(moneda => monedaSeleccionada === 'todas' || moneda === monedaSeleccionada)
         .map(moneda => ({
             label: [moneda, ' Venta'],
-            data: etiquetas.map(fecha => datosAgrupados[fecha][moneda]?.venta || 0),
+            data: etiquetas.map(fecha => datosAgrupados[fecha][moneda].venta || 0),
             borderColor: colores[moneda] || 'black',
             backgroundColor: 'transparent',
             borderWidth: 1,
@@ -74,7 +74,7 @@ function actualizarGrafica(datosAgrupados, monedasDisponibles, monedaSeleccionad
         .filter(moneda => monedaSeleccionada === 'todas' || moneda === monedaSeleccionada)
         .map(moneda => ({
             label: [moneda, ' Compra'],
-            data: etiquetas.map(fecha => datosAgrupados[fecha][moneda]?.compra || 0),
+            data: etiquetas.map(fecha => datosAgrupados[fecha][moneda].compra || 0),
             borderColor: colores[moneda] || 'black',
             backgroundColor: 'transparent',
             borderWidth: 1,
