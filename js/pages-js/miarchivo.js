@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (informes.length > 0) {
 
             informes.forEach(informe => {
-                const fechaSinHora = informe.date.split(',')[0];
+                const fechaSinHora = informe.date.split(' ')[0];
 
                 const filaCotizacion = document.createElement('tr');
                 filaCotizacion.classList.add('celda-contenido');

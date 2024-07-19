@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function actualizarGrafica(datosInformes) {
-    const etiquetas = datosInformes.map(informe => informe.date.split(',')[0]);
+    const etiquetas = datosInformes.map(informe => informe.date);
 
     const colores = {
         'Dolar Blue': 'blue',

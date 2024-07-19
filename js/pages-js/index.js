@@ -18,7 +18,7 @@ const fetchData = async () => {
             name: obj.name,
             data: {
                 ...responses[index],
-                date: new Date().toLocaleString()
+                date: new Date().toLocaleDateString()
             }
         }));
         populateTable(data);
@@ -130,19 +130,27 @@ const populateTable = (data) => {
 
 const addToInforme = (item) => {
     const informes = JSON.parse(localStorage.getItem('informes')) || [];
-    const existing = informes.find(informe => informe.name === item.name && informe.data.date === item.data.date);
+    const todayDate = new Date().toLocaleDateString(); // Obtener solo la fecha sin la hora
+    const existing = informes.find(informe => 
+        informe.name === item.name && 
+        informe.date === todayDate // Comparar solo la fecha sin la hora
+    );
 
     if (existing) {
         alert('La cotización ya se encuentra almacenada.');
     } else {
-        informes.push({ ...item, date: new Date().toLocaleDateString() });
+        const newItem = {
+            ...item,
+            date: todayDate // Guardar solo la fecha sin la hora
+        };
+        informes.push(newItem);
         localStorage.setItem('informes', JSON.stringify(informes));
         alert('Cotización agregada correctamente.');
     }
 };
 
 const showLastUpdated = () => {
-    const lastUpdated = new Date().toLocaleString();
+    const lastUpdated = new Date().toLocaleDateString(); // Mostrar solo la fecha sin la hora
     document.getElementById('last-updated').textContent = `Datos actualizados al: ${lastUpdated}`;
 };
 
