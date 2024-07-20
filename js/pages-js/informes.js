@@ -1,16 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Obtener datos guardados en localStorage
     let informe = localStorage.getItem('informes');
     let datosInformes = JSON.parse(informe);
-    console.log(datosInformes);
+    console.log(datosInformes)
 
     if (informe && datosInformes.length > 0) {
-        const datosAgrupados = agruparDatosPorFecha(datosInformes);
-        const monedasDisponibles = obtenerMonedasDisponibles(datosAgrupados);
-        actualizarGrafica(datosAgrupados, monedasDisponibles);
-        
+        actualizarGrafica(datosInformes);
+
         document.getElementById('btnActualizar').addEventListener('click', function() {
             const monedaSeleccionada = document.getElementById('moneda').value;
-            actualizarGrafica(datosAgrupados, monedasDisponibles, monedaSeleccionada);
+            actualizarGrafica(datosInformes, monedaSeleccionada);
         });
     } else {
         console.log('No hay datos de informes guardados');
@@ -24,33 +23,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-function agruparDatosPorFecha(datosInformes) {
-    const datosAgrupados = {};
+function actualizarGrafica(datosInformes, monedaSeleccionada = 'todas') {
+    let datosFiltrados = monedaSeleccionada === 'todas' 
+        ? datosInformes 
+        : datosInformes.filter(informe => informe.name === monedaSeleccionada);
 
-    datosInformes.forEach(informe => {
-        if (!datosAgrupados[informe.date]) {
-            datosAgrupados[informe.date] = {};
-        }
-        datosAgrupados[informe.date][informe.name] = informe.data;
-    });
-
-    return datosAgrupados;
-}
-
-function obtenerMonedasDisponibles(datosAgrupados) {
-    const monedas = new Set();
-
-    Object.values(datosAgrupados).forEach(dia => {
-        Object.keys(dia).forEach(moneda => {
-            monedas.add(moneda);
-        });
-    });
-
-    return Array.from(monedas);
-}
-
-function actualizarGrafica(datosAgrupados, monedasDisponibles, monedaSeleccionada) {
-    const etiquetas = Object.keys(datosAgrupados);
+    const etiquetas = datosFiltrados.map(informe => informe.date.split(',')[0]);
 
     const colores = {
         'Dolar Blue': 'blue',
@@ -66,36 +44,23 @@ function actualizarGrafica(datosAgrupados, monedasDisponibles, monedaSeleccionad
         'Peso Uruguayo': 'peru',
     };
 
-    const datasetsVenta = monedasDisponibles
-        .filter(moneda => monedaSeleccionada === 'todas' || moneda === monedaSeleccionada)
-        .map(moneda => ({
-            label: [moneda, ' Venta'],
-            data: etiquetas.map(fecha => datosAgrupados[fecha][moneda].venta || 0),
-            borderColor: colores[moneda] || 'black',
+    const datasets = datosFiltrados.map(informe => {
+        return {
+            label: informe.name,
+            data: [informe.data.compra, informe.data.compra - 100, informe.data.compra + 500],
+            borderColor: colores[informe.name] || 'black',
             backgroundColor: 'transparent',
             borderWidth: 1,
             fill: false
-        }));
+        };
+    });
 
-    const datasetsCompra = monedasDisponibles
-        .filter(moneda => monedaSeleccionada === 'todas' || moneda === monedaSeleccionada)
-        .map(moneda => ({
-            label: [moneda, ' Compra'],
-            data: etiquetas.map(fecha => datosAgrupados[fecha][moneda].compra || 0),
-            borderColor: colores[moneda] || 'black',
-            backgroundColor: 'transparent',
-            borderWidth: 1,
-            fill: false
-        }));
-
-    const datasetsCombinados = datasetsVenta.concat(datasetsCompra);
-
-    const ctxCombinado = document.getElementById("miGraficaCombinada").getContext("2d");
-    new Chart(ctxCombinado, {
+    const ctx = document.getElementById("miGraficaCombinada").getContext("2d");
+    new Chart(ctx, {
         type: "line",
         data: {
             labels: etiquetas,
-            datasets: datasetsCombinados
+            datasets: datasets
         },
         options: {
             scales: {
