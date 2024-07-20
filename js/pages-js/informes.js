@@ -15,6 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.log('No hay datos de informes guardados');
     }
+
+    const btnImprimir = document.getElementById('btnImprimirGrafico');
+    if (btnImprimir) {
+        btnImprimir.addEventListener('click', function() {
+            imprimirPantalla();
+        });
+    }
 });
 
 function agruparDatosPorFecha(datosInformes) {
@@ -98,4 +105,8 @@ function actualizarGrafica(datosAgrupados, monedasDisponibles, monedaSeleccionad
             }
         }
     });
+}
+
+function imprimirPantalla() {
+    window.print();
 }

@@ -95,3 +95,33 @@ th, td {
     font-family: "Roboto Condensed", sans-serif;
 
 }
+
+#btnImprimirGrafico {
+    gap: 10px;
+    
+    background-color: transparent;
+    color: black;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 13px;
+}
+
+#btnImprimirGrafico:hover {
+    color: rgb(75, 75, 75);
+}
+
+/* Estilo para la impresión */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #vistaActual, #vistaActual * {
+        visibility: visible;
+    }
+    #vistaActual {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
