@@ -28,7 +28,8 @@ function actualizarGrafica(datosInformes, monedaSeleccionada = 'todas') {
         ? datosInformes 
         : datosInformes.filter(informe => informe.name === monedaSeleccionada);
 
-    const etiquetas = datosFiltrados.map(informe => informe.date.split(',')[0]);
+    const etiquetasFilt = new Set(datosFiltrados.map(informe => informe.date.split(',')[0])); //aca
+    const etiquetas = Array.from(etiquetasFilt);
 
     const colores = {
         'Dolar Blue': 'blue',
@@ -47,7 +48,7 @@ function actualizarGrafica(datosInformes, monedaSeleccionada = 'todas') {
     const datasets = datosFiltrados.map(informe => {
         return {
             label: informe.name,
-            data: [informe.data.compra, informe.data.compra - 100, informe.data.compra + 500],
+            data: [informe.data.compra, informe.data.venta], //aca
             borderColor: colores[informe.name] || 'black',
             backgroundColor: 'transparent',
             borderWidth: 1,
